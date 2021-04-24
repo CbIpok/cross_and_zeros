@@ -3,7 +3,7 @@ cross = 1
 zero = 2
 
 
-def check_win_conrete_player(field: list, player_id):  # todo check diaganals
+def check_win_conrete_player(field: list, player_id):
     for x in range(3):
         if field[x][0] == field[x][1] and field[x][1] == field[x][2] and field[x][0] == player_id:
             return True
@@ -27,8 +27,12 @@ def check_win(field: list) -> int:
         return empty
 
 
-def do_step(field: list, x: int, y: int, isCross: bool) -> bool:  # todo not allow secondary writeing
-    field[x][y] = cross if isCross else zero
+def do_step(field: list, x: int, y: int, isCross: bool) -> bool:
+    if field[x][y] == empty:
+        field[x][y] = cross if isCross else zero
+        return True
+    else:
+        return False
 
 
 def create_field() -> list:
@@ -37,3 +41,5 @@ def create_field() -> list:
         [0, 0, 0],
         [0, 0, 0],
     ]
+
+
