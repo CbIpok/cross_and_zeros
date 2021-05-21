@@ -62,3 +62,7 @@ def run_game():
         if not game_logic.check_win(field) == 0:
             console_user_iterface.print_field(field)
             break
+        if game_logic.check_draw(field) == 1:
+            console_user_iterface.print_field(field)
+            print("Draw!")
+            break

@@ -17,6 +17,14 @@ def check_win_conrete_player(field: list, player_id):
 
     return False
 
+def check_draw(field: list) -> int:
+    empty_counter = 0
+    for i in field:
+        for j in i:
+            if j == empty:
+                empty_counter += 1
+    if empty_counter == 0:
+        return True
 
 def check_win(field: list) -> int:
     if check_win_conrete_player(field, cross):
